@@ -335,6 +335,9 @@ main (int argc, char *argv[])
 #ifdef PINPAD_DND_SUPPORT
   msc_init ();
 #endif
+#ifdef PINPAD_FPR_SUPPORT
+  fpr_init ();
+#endif
 
   usb_thd = chopstx_create (PRIO_USB, __stackaddr_usb, __stacksize_usb,
 			    usb_intr, NULL);
