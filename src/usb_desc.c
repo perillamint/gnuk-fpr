@@ -160,6 +160,9 @@ static const uint8_t config_desc[] = {
   1,			  /* bPinSupport: with PIN pad (verify) */
 #elif defined(PINPAD_DIAL_SUPPORT)
   3,			  /* bPinSupport: with PIN pad (verify, modify) */
+#elif defined(PINPAD_FPR_SUPPORT)
+  1,                      /* bPinSupport: with PIN pad (verify) -- DEBUG ONLY */
+                          /* TODO: Modify it AFTER driver port. */
 #endif
 #else
   0,			  /* bPinSupport: No PIN pad */
