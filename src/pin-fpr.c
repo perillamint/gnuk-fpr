@@ -29,6 +29,7 @@
 #include "gnuk.h"
 
 uint8_t pin_input_buffer[MAX_PIN_CHARS];
+uint8_t pin_input_len;
 
 int
 pinpad_getline (int msg_code, uint32_t timeout)

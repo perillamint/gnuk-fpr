@@ -390,7 +390,7 @@ extern uint8_t admin_authorized;
 #define NUM_ALL_PRV_KEYS 3	/* SIG, DEC and AUT */
 
 #if !defined(OPENPGP_CARD_INITIAL_PW1)
-#define OPENPGP_CARD_INITIAL_PW1 "123456"
+#define OPENPGP_CARD_INITIAL_PW1 "12345678"
 #endif
 
 #if !defined(OPENPGP_CARD_INITIAL_PW3)
