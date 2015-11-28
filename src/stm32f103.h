@@ -24,6 +24,7 @@ static struct RCC *const RCC = ((struct RCC *const)RCC_BASE);
 
 #define RCC_APB2ENR_ADC1EN      0x00000200
 #define RCC_APB2ENR_ADC2EN      0x00000400
+#define RCC_APB2ENR_USART1EN    0x00004000
 #define RCC_APB2ENR_TIM1EN      0x00000800
 #define RCC_APB1ENR_TIM2EN      0x00000001
 #define RCC_APB1ENR_TIM3EN      0x00000002
@@ -31,10 +32,48 @@ static struct RCC *const RCC = ((struct RCC *const)RCC_BASE);
 
 #define RCC_APB2RSTR_ADC1RST    0x00000200
 #define RCC_APB2RSTR_ADC2RST    0x00000400
+#define RCC_APB2RSTR_USART1RST  0x00004000
 #define RCC_APB2RSTR_TIM1RST    0x00000800
 #define RCC_APB1RSTR_TIM2RST    0x00000001
 #define RCC_APB1RSTR_TIM3RST    0x00000002
 #define RCC_APB1RSTR_TIM4RST    0x00000004
+
+struct USART
+{
+  volatile uint16_t SR;
+  volatile uint16_t  RESERVED0;
+  volatile uint16_t DR;
+  volatile uint16_t  RESERVED1;
+  volatile uint16_t BRR;
+  volatile uint16_t  RESERVED2;
+  volatile uint16_t CR1;
+  volatile uint16_t  RESERVED3;
+  volatile uint16_t CR2;
+  volatile uint16_t  RESERVED4;
+  volatile uint16_t CR3;
+  volatile uint16_t  RESERVED5;
+  volatile uint16_t GTPR;
+  volatile uint16_t  RESERVED6;
+};
+
+#define USART_BASE		(APB2PERIPH_BASE + 0x3800)
+
+static struct USART *const USART1 = ((struct USART *const)USART_BASE);
+
+#define USART_CR1_SBK		0x0001
+#define USART_CR1_RWU		0x0002
+#define USART_CR1_RE		0x0004
+#define USART_CR1_TE		0x0008
+#define USART_CR1_IDLEIE	0x0010
+#define USART_CR1_XDNEIE	0x0020
+#define USART_CR1_TCIE		0x0040
+#define USART_CR1_TXEIE		0x0080
+#define USART_CR1_PCIE		0x0100
+#define USART_CR1_PS		0x0200
+#define USART_CR1_PCE		0x0400
+#define USART_CR1_WAKE		0x0800
+#define USART_CR1_M		0x1000
+#define USART_CR1_UE		0x2000
 
 #define  CRC_CR_RESET                        0x00000001
 
