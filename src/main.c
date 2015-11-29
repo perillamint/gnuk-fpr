@@ -311,6 +311,12 @@ main (int argc, char *argv[])
   (void)argc;
   (void)argv;
 
+  //TODO: Implement power-switching circuit with transistor.
+  //This code is moved here for workaround.
+#ifdef PINPAD_FPR_SUPPORT
+  fpr_init ();
+#endif
+
   gnuk_malloc_init ();
 
   flash_unlock ();
@@ -334,9 +340,6 @@ main (int argc, char *argv[])
 #endif
 #ifdef PINPAD_DND_SUPPORT
   msc_init ();
-#endif
-#ifdef PINPAD_FPR_SUPPORT
-  fpr_init ();
 #endif
 
   usb_thd = chopstx_create (PRIO_USB, __stackaddr_usb, __stacksize_usb,
