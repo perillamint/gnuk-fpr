@@ -60,6 +60,17 @@ struct USART
 
 static struct USART *const USART1 = ((struct USART *const)USART_BASE);
 
+#define  USART_SR_PE            0x0001
+#define  USART_SR_FE            0x0002
+#define  USART_SR_NE            0x0004
+#define  USART_SR_ORE           0x0008
+#define  USART_SR_IDLE          0x0010
+#define  USART_SR_RXNE          0x0020
+#define  USART_SR_TC            0x0040
+#define  USART_SR_TXE           0x0080
+#define  USART_SR_LBD           0x0100
+#define  USART_SR_CTS           0x0200
+
 #define USART_CR1_SBK		0x0001
 #define USART_CR1_RWU		0x0002
 #define USART_CR1_RE		0x0004

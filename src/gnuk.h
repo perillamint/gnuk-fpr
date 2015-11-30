@@ -442,6 +442,7 @@ int msc_scsi_read (uint32_t lba, const uint8_t **sector_p);
 void msc_scsi_stop (uint8_t code);
 # elif defined(PINPAD_FPR_SUPPORT)
 void fpr_init (void);
+void fpr_firstrun (void);
 # endif
 #define PIN_INPUT_CURRENT 1
 #define PIN_INPUT_NEW     2

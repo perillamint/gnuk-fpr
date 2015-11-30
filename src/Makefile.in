@@ -46,6 +46,10 @@ ifeq ($(ENABLE_PINPAD),dnd)
 CSRC += usb-msc.c
 endif
 
+ifeq ($(ENABLE_PINPAD),fpr)
+CSRC += gt511c1r.c
+endif
+
 ###################################
 CROSS = arm-none-eabi-
 CC   = $(CROSS)gcc

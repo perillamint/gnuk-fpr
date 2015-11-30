@@ -216,6 +216,10 @@ else
   elif test "$pinpad" = "cir"; then
      TIM_SIZE="0x00c0"
      EXT_SIZE="0x00c0"
+  elif test "$pinpad" = "fpr"; then
+     INITIAL_PASS="25500000"
+     PINPAD_MORE_DEFINE+="\n#define OPENPGP_CARD_INITIAL_PW1 \"$INITIAL_PASS\""
+     PINPAD_MORE_DEFINE+="\n#define OPENPGP_CARD_INITIAL_PW3 \"$INITIAL_PASS\""
   fi
 fi
 

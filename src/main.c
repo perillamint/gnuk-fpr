@@ -149,6 +149,10 @@ device_initialize_once (void)
 	  nibble += (nibble >= 10 ? ('A' - 10) : '0');
 	  flash_put_data_internal (&p[i*4+2], nibble);
 	}
+
+#ifdef PINPAD_FPR_SUPPORT
+      fpr_firstrun();
+#endif
     }
 }
 
